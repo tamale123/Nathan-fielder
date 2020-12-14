@@ -14,7 +14,7 @@ ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said n
 async def on_message(message):
     if message.author == client.user:
         return outer
-    if "nathan" in message.content.lower or "nate" in message.content.lower
+    if "nathan" in message.content.lower or "nate" in message.content.lower:
         msg = message.content.lower().replace("nate",message.author)
         msg = msg.replace("nathan",message.author)
         await message.channel.send(msg)

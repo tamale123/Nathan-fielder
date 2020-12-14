@@ -12,7 +12,6 @@ ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said n
 3: they main ness
 4: they main ness
 5: they main ness""","god I hate ness","ness is the worse","I wish ness die","ness is a stupid dumb diaper baby","hey guys can we please stop talking about ness? I really hate his guts and I cry every time I read his name."]
-print(token)
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -31,6 +30,3 @@ async def on_message(message):
     if "ness" in message.content:
         await message.channel.send(random.choice(ness))
 client.run(TOKEN)
-           """ mst = message.content
-            use = message.user
-            msg = mst.lower().replace(b,use))"""

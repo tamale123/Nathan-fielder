@@ -2,6 +2,7 @@ import os
 import discord
 import random
 from discord.ext import commands
+token = "test"
 token = os.getenv("TOKEN")
 client = discord.Client()
 greet = ["hi","hello","helo","hey","sup","hiiii","yo"]
@@ -22,9 +23,7 @@ async def on_message(message):
             await message.channel.send(random.choice(greet))
     for b in name:
         if b in message.content.lower():
-            mst = message.content
-            use = message.user
-            msg = mst.lower().replace(b,use))
+            msg = "what"
             await message.channel.send(msg)
     msg = message.content.lower().replace("'","")
     if "im " in msg:
@@ -32,4 +31,7 @@ async def on_message(message):
         await message.channel.send(msg)
     if "ness" in message.content:
         await message.channel.send(random.choice(ness))
-client.run(token)
+client.run("Nzg3NTc1MDA1MTkzOTYxNTEz.X9W8YQ.5-zV4gFbhnzGIEjfBQUafO8cHXo")
+           """ mst = message.content
+            use = message.user
+            msg = mst.lower().replace(b,use))"""

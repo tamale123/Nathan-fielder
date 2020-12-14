@@ -18,7 +18,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     for ele in greet:
-        if ele in message.content.lower() or ele == message.content.lower().strip:
+        if ele in message.content.lower() or ele.strip() == message.content.lower():
             await message.channel.send(random.choice(greet))
     for b in name:
         if b in message.content.lower():

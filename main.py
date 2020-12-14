@@ -1,6 +1,7 @@
 import os
 import discord
 import random
+from boto.s3.connection import S3Connection
 client = discord.Client()
 greet = ["hi","hello","helo","hey","sup","hiiii","yo"]
 name = ["nate","nathan"]
@@ -29,4 +30,4 @@ async def on_message(message):
     if "ness" in message.content:
         await message.channel.send(random.choice(ness))
 
-client.run(TOKEN)
+client.run(os.environ['TOKEN'])

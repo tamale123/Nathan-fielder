@@ -35,4 +35,3 @@ async def on_message(message):
     if "no u" in message.content:
         await message.channel.send("no u")
 client.run(TOKEN)
- 

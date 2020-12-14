@@ -1,7 +1,6 @@
 import os
 import discord
 import random
-TOKEN = 'Nzg3NTc1MDA1MTkzOTYxNTEz.X9W8YQ.ZJpfsuNX0pfzzPmD0itbCq9WkE4'
 client = discord.Client()
 greet = ["hi","hello","helo","hey","sup","hiiii","yo"]
 ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said ness","god I hate ness","ness >:(",'"ness"... every time someone says his name god weeps.',"""top 5 reasons I hate ness mains:

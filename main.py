@@ -1,4 +1,5 @@
 import os
+import DuckDuckGo
 import discord
 import random
 import time
@@ -7,6 +8,7 @@ TOKEN = os.getenv("TOKEN")
 client = discord.Client()
 greet = ["hi ","hello ","helo ","hey ","sup ","hiiii ","yo "]
 name = ["nate","nathan"]
+querys = ["what","who","where","why","when"]
 ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said ness","god I hate ness","ness >:(",'"ness"... every time someone says his name god weeps.',"""top 5 reasons I hate ness mains:
 1: they main ness
 2: they main ness
@@ -32,4 +34,11 @@ async def on_message(message):
         await message.channel.send(random.choice(ness))
     if "no u" in message.content:
         await message.channel.send("no u")
+    msg = message.content.lower().replace("'","")      
+    for x in querys:
+        if x in msg():
+            msg = message.content.lower()
+            q = DuckDuckGo.search(x)
+            msg = q.display(limit = 1)
+            await message.channel.send(msg)
 client.run(TOKEN)

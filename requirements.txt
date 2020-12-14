@@ -1,2 +1,2 @@
 discord.py
-DuckDuckGo-Python3-Library==1.0
+duckpy

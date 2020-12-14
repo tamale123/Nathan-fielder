@@ -21,11 +21,13 @@ async def on_message(message):
             await message.channel.send(random.choice(greet))
     for b in name:
         if b in message.content.lower():
-            msg = message.content.replace(b,(str(message.author).split("#", 1)[0]))
+            msg = message.content.lower().replace(b,(str(message.author).split("#", 1)[0]))
             await message.channel.send(msg)
     if "im " in (message.content.lower().replace("'","")):
         msg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
         await message.channel.send(msg)
     if "ness" in message.content:
         await message.channel.send(random.choice(ness))
+    if "no u" in message.content:
+        await message.channel.send("no u")
 client.run(TOKEN)

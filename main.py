@@ -15,7 +15,7 @@ async def on_message(message):
      if message.author == client.user:
         return
     for ele in greet:
-        if ele in message.content:
+        if ele in message.content.lower():
             await message.channel.send(random.choice(greet))
     msg = message.content.lower().replace("'","")
     if "im " in msg:

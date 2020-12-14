@@ -23,7 +23,7 @@ async def on_message(message):
         if b in message.content.lower():
             msg = message.content.replace(b,(str(message.author).split("#", 1)[0]))
             await message.channel.send(msg)
-    if "im " in message.content.lower().replace("'",""):
+    if "im " in (message.content.lower().replace("'","")):
         msg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
         await message.channel.send(msg)
     if "ness" in message.content:

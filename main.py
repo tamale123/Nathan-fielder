@@ -1,5 +1,7 @@
 import os
-import DuckDuckGo
+from wikipya.core import Wikipya
+import wikipediaapi
+w = Wikipya("en")
 import discord
 import random
 import time
@@ -8,7 +10,7 @@ TOKEN = os.getenv("TOKEN")
 client = discord.Client()
 greet = ["hi ","hello ","helo ","hey ","sup ","hiiii ","yo "]
 name = ["nate","nathan"]
-querys = ["what","who","where","why","when"]
+q1 = ["what","who","where","why","when"]
 ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said ness","god I hate ness","ness >:(",'"ness"... every time someone says his name god weeps.',"""top 5 reasons I hate ness mains:
 1: they main ness
 2: they main ness
@@ -36,12 +38,17 @@ async def on_message(message):
         await message.channel.send("no u")
     msg = message.content.lower().replace("'","")
     c = 0
-    for x in querys:
+    for x in q1:
         if x in msg and c != 1:
-            msg = message.content
-            q = DuckDuckGo.search(msg)
-            msg = q.display(limit = 1)
-            c = 1
-            await message.channel.send(msg)
+            msg = message.conten
+            msg = (msg[(msg.find(x)):])
+            for x in q2:
+                if x in msg and c != 1:
+                    msg = (msg[(msg.find(x)):])
+                    sch = w.search(msg, limit=1)[0]
+                    img = w.getImageByPageName.source(sch)
+                    c = 1
+                    msg = sch.summary
+                    await message.channel.send(img+msg)
             
 client.run(TOKEN)

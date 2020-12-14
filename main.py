@@ -1,7 +1,6 @@
 import os
 import discord
 import random
-TOKEN = 'Nzg3NTc1MDA1MTkzOTYxNTEz.X9W8YQ.ZJpfsuNX0pfzzPmD0itbCq9WkE4'
 client = discord.Client()
 greet = ["hi","hello","helo","hey","sup","hiiii","yo"]
 name = ["nate","nathan"]
@@ -20,8 +19,8 @@ async def on_message(message):
             await message.channel.send(random.choice(greet))
     for b in name:
         if b in message.content.lower():
-            msg = "what"
-            msg = message.cpntent.lower().replace(b,message.user)
+            msg = "wha"
+            msg = message.content.lower().replace(b,message.user)
             await message.channel.send(msg)
     msg = message.content.lower().replace("'","")
     if "im " in msg:

@@ -20,7 +20,6 @@ async def on_message(message):
             await message.channel.send(random.choice(greet))
     for b in name:
         if b in message.content.lower():
-            await message.channel.send(b)
             msg = ("@"+message.author)
             await message.channel.send(msg)
             await message.channel.send(message.content.replace(b,message.author))

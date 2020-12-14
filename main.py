@@ -1,6 +1,7 @@
 import os
 import discord
 import random
+TOKEN = 'Nzg3NTc1MDA1MTkzOTYxNTEz.X9W8YQ.ZJpfsuNX0pfzzPmD0itbCq9WkE4'
 client = discord.Client()
 greet = ["hi","hello","helo","hey","sup","hiiii","yo"]
 name = ["nate","nathan"]

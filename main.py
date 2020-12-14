@@ -1,10 +1,11 @@
 import os
 import discord
 import random
+import time
 from discord.ext import commands
 TOKEN = os.getenv("TOKEN")
 client = discord.Client()
-greet = ["hi","hello","helo","hey","sup","hiiii","yo"]
+greet = ["hi ","hello ","helo ","hey ","sup ","hiiii ","yo "]
 name = ["nate","nathan"]
 ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said ness","god I hate ness","ness >:(",'"ness"... every time someone says his name god weeps.',"""top 5 reasons I hate ness mains:
 1: they main ness
@@ -12,6 +13,9 @@ ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said n
 3: they main ness
 4: they main ness
 5: they main ness""","god I hate ness","ness is the worse","I wish ness die","ness is a stupid dumb diaper baby","hey guys can we please stop talking about ness? I really hate his guts and I cry every time I read his name."]
+@client.event
+async def on_ready
+    time.sleep(random.randint(5,60))
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -31,3 +35,4 @@ async def on_message(message):
     if "no u" in message.content:
         await message.channel.send("no u")
 client.run(TOKEN)
+ 

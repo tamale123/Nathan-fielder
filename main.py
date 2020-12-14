@@ -11,9 +11,8 @@ ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said n
 4: they main ness
 5: they main ness""","god I hate ness","ness is the worse","I wish ness die","ness is a stupid dumb diaper baby","hey guys can we please stop talking about ness? I really hate his guts and I cry every time I read his name."]
 @client.event
-async def on_ready():
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="the screams of tortured souls"))
 async def on_message(message):
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="the screams of tortured souls"))
     if message.author == client.user:
         return
     for ele in greet:

@@ -1,1 +1,1 @@
-worker: Nathan-fielder/main.py
+worker: python Nathan-fielder/main.py

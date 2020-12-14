@@ -20,7 +20,8 @@ async def on_message(message):
             await message.channel.send(random.choice(greet))
     for b in name:
         if b in message.content.lower():
-            await message.channel.send(message.content.lower().replace("nate",message.author).replace("nathan",message.author))
+            await message.channel.send(b)
+            await message.channel.send(message.content.lower().replace(b,message.author))
     msg = message.content.lower().replace("'","")
     if "im " in msg:
         msg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."

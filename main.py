@@ -21,6 +21,7 @@ async def on_message(message):
     for b in name:
         if b in message.content.lower():
             msg = "what"
+            msg = message.cpntent.lower().replace(b,message.user)
             await message.channel.send(msg)
     msg = message.content.lower().replace("'","")
     if "im " in msg:

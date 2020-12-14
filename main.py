@@ -14,18 +14,18 @@ ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said n
 5: they main ness""","god I hate ness","ness is the worse","I wish ness die","ness is a stupid dumb diaper baby","hey guys can we please stop talking about ness? I really hate his guts and I cry every time I read his name."]
 @client.event
 async def on_message(message):
-    if message.author == client.user:
-        return
-    for ele in greet:
-        if ele in message.content.lower():
-            await message.channel.send(random.choice(greet))
-    for b in name:
-        if b in message.content.lower():
-            msg = message.content.replace(b,(str(message.author).split("#", 1)[0]))
-            await message.channel.send(msg)
-    if "im " in (message.content.lower().replace("'","")):
-        msg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
-        await message.channel.send(msg)
     if "ness" in message.content:
+        msg = (random.choice(ness))
         await message.channel.send(random.choice(ness))
+    if "im " in message.content.lower().replace("'",""):
+        msg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."]
+    for x in greet:
+        if x in message.content.lower():
+            msg = message.channel.send(random.choice(greet))
+    for b in name:
+        if i in message.content.lower():
+            msg = message.content.replace(i,(str(message.author).split("#", 1)[0]))
+    unless message.author == client.user:
+        message.channel.send(msg)
+    
 client.run(TOKEN)

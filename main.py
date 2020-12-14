@@ -1,4 +1,5 @@
 import os
+import func
 import discord
 import random
 TOKEN = 'Nzg3NTc1MDA1MTkzOTYxNTEz.X9W8YQ.ZJpfsuNX0pfzzPmD0itbCq9WkE4'

@@ -1,1 +1,2 @@
 discord.py
+DuckDuckGo-Python3-Library

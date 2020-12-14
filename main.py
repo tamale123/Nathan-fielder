@@ -21,7 +21,7 @@ async def on_message(message):
     if "im " in msg:
         msg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
         await message.channel.send(msg)
-    if "ness" in message.content:
+    if "ness" in message.content.lower():
         await message.channel.send(random.choice(ness))
 
 client.run(TOKEN)

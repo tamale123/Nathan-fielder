@@ -34,11 +34,14 @@ async def on_message(message):
         await message.channel.send(random.choice(ness))
     if "no u" in message.content:
         await message.channel.send("no u")
-    msg = message.content.lower().replace("'","")      
+    msg = message.content.lower().replace("'","")
+    c = 0
     for x in querys:
-        if x in msg():
-            msg = message.content.lower()
-            q = DuckDuckGo.search(x)
+        if x in msg and c != 1:
+            msg = message.content
+            q = DuckDuckGo.search(msg)
             msg = q.display(limit = 1)
+            c = 1
             await message.channel.send(msg)
+            
 client.run(TOKEN)

@@ -10,7 +10,8 @@ TOKEN = os.getenv("TOKEN")
 client = discord.Client()
 greet = ["hi ","hello ","helo ","hey ","sup ","hiiii ","yo "]
 name = ["nate","nathan"]
-q1 = ["what","who","where","why","when"]
+q1 = ["what","who"]
+q2 = ["is","was","are"]
 ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said ness","god I hate ness","ness >:(",'"ness"... every time someone says his name god weeps.',"""top 5 reasons I hate ness mains:
 1: they main ness
 2: they main ness

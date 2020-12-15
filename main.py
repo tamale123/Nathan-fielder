@@ -44,13 +44,16 @@ async def on_message(message):
         if x in msg and c != 1:
             msg = message.conten
             msg = (msg[(msg.find(x)):])
+            await message.channel.send("p")
             for x in q2:
                 if x in msg and c != 1:
+                    await message.channel.send("b")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)[0]
                     img = w.getImageByPageName.source(sch)
                     c = 1
                     msg = sch.summary
-                    await message.channel.send(img+msg)
+                    await message.channel.send(msg)
+                    await message.channel.send(img)
             
 client.run(TOKEN)

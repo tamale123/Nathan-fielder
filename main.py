@@ -21,7 +21,7 @@ ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said n
 5: they main ness""","god I hate ness","ness is the worse","I wish ness die","ness is a stupid dumb diaper baby","hey guys can we please stop talking about ness? I really hate his guts and I cry every time I read his name."]
 @client.event
 async def on_message(message):
-    if message.author == client.user or str(message.author) == "Nathan fielder#6413":
+    if message.author == client.user:
         return
     for ele in greet:
         if ele in message.content.lower() or ele.strip() == message.content.lower():

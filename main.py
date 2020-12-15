@@ -44,7 +44,7 @@ async def on_message(message):
             msg = (msg[(msg.find(x)):])
             for x in q2:
                 if x in msg:
-                    await message.channel.send("tr")
+                    await message.channel.send("tree")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)
                     sch = str(sch).split("'")
@@ -52,10 +52,10 @@ async def on_message(message):
                     msg = wiki_wiki.page(sch).summary
                     img = w.getImageByPageName(sch)
                     img = (img["source"])
-                    med = discord.Embed(
+                    embed = discord.Embed(
                         title = sch,
                         description = msg,
-                        colour = discord.color.blue()
+                        colour = discord.colour.blue()
                     )
                     med.set_image(url=img)
                     med.set_footer(text=wiki_wiki.page(sch).fullurl)

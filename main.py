@@ -48,7 +48,7 @@ async def on_message(message):
                     await message.channel.send("z")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)
-                    await message.channel.send(type(sch))
+                    await message.channel.send(sch)
                     img = w.getImageByPageName.source(sch)
                     msg = sch.summary
                     await message.channel.send(msg)

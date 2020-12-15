@@ -44,7 +44,7 @@ async def on_message(message):
             msg = (msg[(msg.find(x)):])
             for x in q2:
                 if x in msg:
-                    await message.channel.send("gbs")
+                    await message.channel.send("abs")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)
                     sch = str(sch).split("'")
@@ -52,7 +52,7 @@ async def on_message(message):
                     msg = wiki_wiki.page(sch).summary
                     await message.channel.send(str(msg))
                     img = w.getImageByPageName(sch)
-                    await message.channel.send(img)
+                    await message.channel.send(img[source])
 
                              
 client.run(TOKEN)

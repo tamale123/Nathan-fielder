@@ -53,8 +53,7 @@ async def on_message(message):
                     img = w.getImageByPageName(sch)
                     img = (img["source"])
                     url = wiki_wiki.page(sch).fullurl
-                    tlt = '['+ sch + '](' + url + ')'
-                    embedVar = discord.Embed(title=tlt, description=msg[:247]+"...", color=0x7289da)
+                    embedVar = discord.Embed(title=sch, description=msg[:247]+"...", color=0x7289da)
                     embedVar.set_footer(text=wiki_wiki.page(sch).fullurl)
                     embedVar.set_image(url=img)
                     await message.channel.send(embed=embedVar)

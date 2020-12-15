@@ -46,7 +46,8 @@ async def on_message(message):
                 if x in msg:
                     msg = (msg[(msg.find(x)):])
                     sch = msg.capitalize()
-                    if wiki_wiki.page(sch).exists == False:
+                    sca = wiki_wiki.page(sch).exists
+                    if sca != True:
                         sch = w.search(msg, limit=1)
                         sch = str(sch).split("'")
                         sch = sch[1]

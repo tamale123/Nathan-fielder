@@ -39,19 +39,17 @@ async def on_message(message):
     if "no u" in message.content:
         await message.channel.send("no u")
     msg = message.content.lower().replace("'","")
-    c = 0
     for x in q1:
-        if x in msg and c != 1:
+        if x in msg:
             msg = message.conten
             msg = (msg[(msg.find(x)):])
             await message.channel.send("p")
             for x in q2:
-                if x in msg and c != 1:
+                if x in msg:
                     await message.channel.send("b")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)[0]
                     img = w.getImageByPageName.source(sch)
-                    c = 1
                     msg = sch.summary
                     await message.channel.send(msg)
                     await message.channel.send(img)

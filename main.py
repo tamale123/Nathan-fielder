@@ -2,6 +2,7 @@ import os
 from wikipya.core import Wikipya
 import wikipediaapi
 w = Wikipya("en")
+wiki_wiki = wikipediaapi.Wikipedia('en')
 import discord
 import random
 import time

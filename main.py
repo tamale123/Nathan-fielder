@@ -45,7 +45,7 @@ async def on_message(message):
             for x in q2:
                 if x in msg:
                     msg = (msg[(msg.find(x)):])
-                    unless wiki_wiki.page(msg).exists == True:
+                    unless str(wiki_wiki.page(msg).exists) == "True":
                         sch = w.search(msg, limit=1)
                         sch = str(sch).split("'")
                         sch = sch[1]

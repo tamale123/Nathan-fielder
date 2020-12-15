@@ -38,10 +38,9 @@ async def on_message(message):
         await message.channel.send(random.choice(ness))
     if "no u" in message.content:
         await message.channel.send("no u")
-    msg = message.content.lower().replace("'","")
+    msg = message.content.lower()
     for x in q1:
         if x in msg:
-            msg = message.conten
             msg = (msg[(msg.find(x)):])
             await message.channel.send("p")
             for x in q2:

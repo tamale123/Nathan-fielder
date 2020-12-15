@@ -65,5 +65,6 @@ async def on_message(message):
                         unless c==1:
                             c = 1
                             await message.channel.send(embed=embedVar)
-    except Exception as e: print(e)                
+    except Exception as e: 
+        await message.channel.send(e)                
 client.run(TOKEN)

@@ -39,6 +39,7 @@ async def on_message(message):
     if "no u" in message.content:
         await message.channel.send("no u")
     msg = message.content.lower()
+    c = 0
     for x in q1:
         if x in msg:
             msg = (msg[(msg.find(x)):])
@@ -60,6 +61,8 @@ async def on_message(message):
                     embedVar = discord.Embed(title=sch, description=msg[:350]+"[...]("+wiki_wiki.page(sch).fullurl+")", color=0x7289da, url=wiki_wiki.page(sch).fullurl)
                     embedVar.set_footer(text=wiki_wiki.page(sch).fullurl[8:])
                     embedVar.set_image(url=img)
-                    await message.channel.send(embed=embedVar)
+                    unless c==1:
+                        c = 1
+                        await message.channel.send(embed=embedVar)
                     
 client.run(TOKEN)

@@ -57,5 +57,5 @@ async def on_message(message):
                     embedVar.set_footer(text="from "+url[8:])
                     embedVar.set_image(url=img)
                     await message.channel.send(embed=embedVar)
-                    
+   
 client.run(TOKEN)

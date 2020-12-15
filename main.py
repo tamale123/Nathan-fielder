@@ -1,4 +1,8 @@
 import os
+from wikipya.core import Wikipya
+import wikipediaapi
+w = Wikipya("en")
+wiki_wiki = wikipediaapi.Wikipedia('en')
 import discord
 import random
 import time
@@ -7,6 +11,8 @@ TOKEN = os.getenv("TOKEN")
 client = discord.Client()
 greet = ["hi ","hello ","helo ","hey ","sup ","hiiii ","yo "]
 name = ["nate","nathan"]
+q1 = ["what","who"]
+q2 = ["is","was","are","'s"]
 ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said ness","god I hate ness","ness >:(",'"ness"... every time someone says his name god weeps.',"""top 5 reasons I hate ness mains:
 1: they main ness
 2: they main ness
@@ -32,4 +38,23 @@ async def on_message(message):
         await message.channel.send(random.choice(ness))
     if "no u" in message.content:
         await message.channel.send("no u")
+    msg = message.content.lower()
+    for x in q1:
+        if x in msg:
+            msg = (msg[(msg.find(x)):])
+            for x in q2:
+                if x in msg:
+                    msg = (msg[(msg.find(x)):])
+                    #unless str(wiki_wiki.page(sch)) == "True":
+                    sch = w.search(msg, limit=1)
+                    sch = str(sch).split("'")
+                    sch = sch[1]
+                    msg = wiki_wiki.page(sch).summary
+                    img = w.getImageByPageName(sch)
+                    img = (img["source"])
+                    embedVar = discord.Embed(title=sch, description=msg[:247]+"...", color=0x7289da)
+                    embedVar.set_footer(text=wiki_wiki.page(sch).fullurl)
+                    embedVar.set_image(url=img)
+                    await message.channel.send(embed=embedVar)
+                    
 client.run(TOKEN)

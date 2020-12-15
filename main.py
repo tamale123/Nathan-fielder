@@ -52,13 +52,14 @@ async def on_message(message):
                     msg = wiki_wiki.page(sch).summary
                     img = w.getImageByPageName(sch)
                     img = (img["source"])
-                    embed = discord.Embed(
+                    med = discord.Embed(
                         title = sch,
                         description = msg,
                         colour = discord.color.blue()
                     )
-                    ebmed.set_image(url=img)
-                    await client.say(embed=embed)
+                    med.set_image(url=img)
+                    med.set_footer(text=wiki_wiki.page(sch).fullurl)
+                    await client.say(embed=med)
                     
 
                              

@@ -45,15 +45,14 @@ async def on_message(message):
             for x in q2:
                 if x in msg:
                     msg = (msg[(msg.find(x)):])
-                    #unless str(wiki_wiki.page(msg).exists) == "True":
+                    #unless str(wiki_wiki.page(sch)) == "True":
                     sch = w.search(msg, limit=1)
                     sch = str(sch).split("'")
                     sch = sch[1]
                     msg = wiki_wiki.page(sch).summary
                     img = w.getImageByPageName(sch)
                     img = (img["source"])
-                    url = wiki_wiki.page(sch).fullurl
-                    embedVar = discord.Embed(title="[{sch}]({url}]", description=msg[:247]+"...", color=0x7289da)
+                    embedVar = discord.Embed(title=sch, description=msg[:247]+"...", color=0x7289da)
                     embedVar.set_footer(text=wiki_wiki.page(sch).fullurl)
                     embedVar.set_image(url=img)
                     await message.channel.send(embed=embedVar)

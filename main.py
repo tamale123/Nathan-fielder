@@ -45,10 +45,11 @@ async def on_message(message):
             await message.channel.send("b")
             for x in q2:
                 if x in msg:
-                    await message.channel.send("z")
+                    await message.channel.send("v")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)
-                    await message.channel.send(sch)
+                    sch = sch[0].split("'")
+                    await message.channel.send(sch[2])
                     img = w.getImageByPageName.source(sch)
                     msg = sch.summary
                     await message.channel.send(msg)

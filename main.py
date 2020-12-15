@@ -50,9 +50,16 @@ async def on_message(message):
                     sch = str(sch).split("'")
                     sch = sch[1]
                     msg = wiki_wiki.page(sch).summary
-                    await message.channel.send(str(msg))
                     img = w.getImageByPageName(sch)
-                    await message.channel.send(img[source])
+                    img = (img["source"])
+                    embed = discord.Embed(
+                        title = sch,
+                        description = msg,
+                        colour = discord.color.blue()
+                    )
+                    ebmed.set_image(url=img)
+                    awai
+                    
 
                              
 client.run(TOKEN)

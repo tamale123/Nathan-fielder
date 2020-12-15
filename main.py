@@ -53,9 +53,11 @@ async def on_message(message):
                         sch = sch[1]
                     msg = wiki_wiki.page(sch).summary
                     img = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.pJWnPpkkd8SWkI42q1VY_AHaFS%26pid%3DApi&f=1"
-                    img = w.getImageByPageName(sch)
-                    if img != "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.pJWnPpkkd8SWkI42q1VY_AHaFS%26pid%3DApi&f=1"
+                    try:
+                        img = w.getImageByPageName(sch)
                         img = (img["source"])
+                    except exception:
+                        pass
                     embedVar = discord.Embed(title=sch, description=msg[:350]+"[...]("+wiki_wiki.page(sch).fullurl+")", color=0x7289da, url=wiki_wiki.page(sch).fullurl)
                     embedVar.set_footer(text=wiki_wiki.page(sch).fullurl[8:])
                     embedVar.set_image(url=img)

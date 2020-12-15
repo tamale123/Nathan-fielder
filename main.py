@@ -44,7 +44,6 @@ async def on_message(message):
             msg = (msg[(msg.find(x)):])
             for x in q2:
                 if x in msg:
-                    await message.channel.send("se")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)
                     sch = str(sch).split("'")
@@ -52,9 +51,9 @@ async def on_message(message):
                     msg = wiki_wiki.page(sch).summary
                     img = w.getImageByPageName(sch)
                     img = (img["source"])
-                    embedVar = discord.Embed(title=sch, description=msg, color=0x00ff00)
+                    embedVar = discord.Embed(title=sch, description=msg, color=0x7289da)
                     embedVar.set_footer(text=wiki_wiki.page(sch).fullurl)
-                    embedVar.set_image(url=img, width = 1500)
+                    embedVar.set_image(url=img, width=1500)
                     await message.channel.send(embed=embedVar)
                     """med = discord.Embed(
                         title = sch,

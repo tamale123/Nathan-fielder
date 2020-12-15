@@ -44,7 +44,6 @@ async def on_message(message):
             msg = (msg[(msg.find(x)):])
             for x in q2:
                 if x in msg:
-                    channel = ctx.message.channel
                     await message.channel.send("trdee")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)
@@ -60,7 +59,7 @@ async def on_message(message):
                     )
                     med.set_image(url=img)
                     med.set_footer("text=wiki_wiki.page(sch).fullurl")
-                    await client.send_message(channel, embed=med)
+                    await message.channel.send(embed=med)
                     
 
                              

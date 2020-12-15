@@ -44,7 +44,7 @@ async def on_message(message):
             msg = (msg[(msg.find(x)):])
             for x in q2:
                 if x in msg:
-                    await message.channel.send("abs")
+                    await message.channel.send("tr")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)
                     sch = str(sch).split("'")
@@ -58,7 +58,7 @@ async def on_message(message):
                         colour = discord.color.blue()
                     )
                     ebmed.set_image(url=img)
-                    awai
+                    await client.say(embed=embed)
                     
 
                              

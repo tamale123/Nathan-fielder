@@ -49,10 +49,10 @@ async def on_message(message):
                     sch = w.search(msg, limit=1)
                     sch = str(sch).split("'")
                     sch = sch[1]
-                    await message.channel.send(str(sch))
                     msg = wiki_wiki.page(sch).summary
                     await message.channel.send(str(msg))
-                    img = w(sch).getImageByPageName[source]
+                    img = w.getImageByPageName(sch)
+                    img = img[source]
                     await message.channel.send(str(img))
 
                              

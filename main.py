@@ -42,18 +42,18 @@ async def on_message(message):
     for x in q1:
         if x in msg:
             msg = (msg[(msg.find(x)):])
-            await message.channel.send("b")
             for x in q2:
                 if x in msg:
-                    await message.channel.send("yeehawwll")
+                    await message.channel.send("gb")
                     msg = (msg[(msg.find(x)):])
                     sch = w.search(msg, limit=1)
                     sch = str(sch).split("'")
                     sch = sch[1]
                     await message.channel.send(str(sch))
-                    img = w.sch.getImageByPageName[source]
-                    await message.channel.send(str(img))
                     msg = wiki_wiki.page.sch.summary
                     await message.channel.send(str(msg))
+                    img = w.sch.getImageByPageName[source]
+                    await message.channel.send(str(img))
+
                              
 client.run(TOKEN)

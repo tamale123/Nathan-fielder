@@ -45,10 +45,10 @@ async def on_message(message):
             for x in q2:
                 if x in msg:
                     msg = (msg[(msg.find(x)):])
-                    #unless str(wiki_wiki.page(sch)) == "True":
-                    sch = w.search(msg, limit=1)
-                    sch = str(sch).split("'")
-                    sch = sch[1]
+                    unless str(wiki_wiki.page(sch).exists) == "True":
+                        sch = w.search(msg, limit=1)
+                        sch = str(sch).split("'")
+                        sch = sch[1]
                     msg = wiki_wiki.page(sch).summary
                     img = w.getImageByPageName(sch)
                     img = (img["source"])

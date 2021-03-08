@@ -23,7 +23,8 @@ async def on_message(message):
     await message.channel.send("pog gamer")
     res = clento.query(message.content) 
     answer = next(res.results).text  
-    mssg=answer.replace("Wolfram|Alpha"/"Nathan") 
+    mssg = answer.replace("Wolfram|Alpha"/"Nathan")
+    await message.channel.send(mssg)
     for ele in greet:
         if ele in message.content.lower() or ele.strip() == message.content.lower():
             mssg=random.choice(greet)

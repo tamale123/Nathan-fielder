@@ -7,7 +7,7 @@ import random
 import time
 from discord.ext import commands
 TOKEN = os.getenv("TOKEN")
-client = discord.Client()
+clint = discord.Client()
 greet = ["hi ","hello ","helo ","hey ","sup ","yo ","you are obselete, fleshbag","stinky human"]
 name = ["nate","nathan"]
 ness = ["<:natelove:818547675489632267>","im highkey romantically attracted to ness","i love ness <:natelove:818547675489632267>","ness is so hot and he is too good for sayori","ness is hot <:natelove:818547675489632267>","nesss <:natelove:818547675489632267>","ness is so poggers","ness <3","ness :)",'ness pog',"""top 5 reasons I love ness mains:
@@ -18,7 +18,7 @@ ness = ["<:natelove:818547675489632267>","im highkey romantically attracted to n
 5: they main ness""","god I love ness","ness is the best","I wish ness live forever","ness is a epic pog gamer","ness looks so epic and cool with his red hat","ness is really great but i dont see whats so great about sayori. he should be with a nice guy like me."]
 @client.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == clint.user:
         return
     await message.channel.send("pog gamer")
     res = client.query(message.content) 
@@ -41,4 +41,4 @@ async def on_message(message):
         mssg="no u"
     await message.channel.send(mssg)
               
-client.run(TOKEN)
+clint.run(TOKEN)

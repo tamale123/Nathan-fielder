@@ -22,9 +22,8 @@ async def on_message(message):
         return
     await message.channel.send("pog gamer")
     res = client.query(message.content) 
-    answer = next(res.results).text  
-    mssg="answer" 
-    await message.channel.send(mssg)
+
+    await message.channel.send(res)
     for ele in greet:
         if ele in message.content.lower() or ele.strip() == message.content.lower():
             mssg=random.choice(greet)

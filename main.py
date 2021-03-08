@@ -38,6 +38,6 @@ async def on_message(message):
         mssg=random.choice(ness)
     if "no u" in message.content:
         mssg="no u"
-    await message.channrl.send(mssg)
+    await message.channel.send(mssg)
               
 client.run(TOKEN)

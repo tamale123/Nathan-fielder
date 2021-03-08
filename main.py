@@ -18,7 +18,7 @@ greet = ["hi ","hello ","helo ","hey ","sup ","hiiii ","yo ","you are obselete, 
 name = ["nate","nathan"]
 q1 = ["what","who","wtf"]
 q2 = ["is","was","are","'s"]
-ness = ["ness is so poggers","ness <3","ness :)",'ness pog',"""top 5 reasons I love ness mains:
+ness = ["<:natelove:818547675489632267>","im highkey romantically attracted to ness","i love ness <:natelove:818547675489632267>","ness is so hot and he is too good for sayori","ness is hot <:natelove:818547675489632267>","nesss <:natelove:818547675489632267>","ness is so poggers","ness <3","ness :)",'ness pog',"""top 5 reasons I love ness mains:
 1: they main ness
 2: they main ness
 3: they main ness
@@ -43,9 +43,9 @@ async def on_message(message):
         await message.channel.send(random.choice(ness))
     if "no u" in message.content:
         await message.channel.send("no u")
-    msg = message.content.lower()
+    """msg = message.content.lower()
     c = 0
-    """for x in q1:
+    for x in q1:
         if x in msg:
             msg = (msg[(msg.find(x)):])
             for x in q2:

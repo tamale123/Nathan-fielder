@@ -44,9 +44,8 @@ async def on_message(message):
     if "no u" in message.content:
         await message.channel.send("no u")
     msg = message.content.lower()
-
     c = 0
-    for x in q1:
+    """for x in q1:
         if x in msg:
             msg = (msg[(msg.find(x)):])
             for x in q2:
@@ -69,8 +68,8 @@ async def on_message(message):
                     embedVar.set_image(url=img)
                     if c == 0:
                         c = 1
-                        await message.channel.send(embed=embedVar)
+                        await message.channel.send(embed=embedVar)"""
     res = client.query(message.content) 
     answer = next(res.results).text  
-    message.channel.send(answer)           
+    await message.channel.send(answer)           
 client.run(TOKEN)

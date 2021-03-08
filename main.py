@@ -18,31 +18,32 @@ ness = ["<:natelove:818547675489632267>","im highkey romantically attracted to n
 5: they main ness""","god I love ness","ness is the best","I wish ness live forever","ness is a epic pog gamer","ness looks so epic and cool with his red hat","ness is really great but i dont see whats so great about sayori. he should be with a nice guy like me."]
 @client.event
 async def on_message(message):
-    if message.author == client.user:
-        return
-    res = clento.query(message.content) 
-    answer = next(res.results).text  
-    mssg = (answer.replace("Wolfram|Alpha","Nathan"))
-    
-    for ele in greet:
-        if ele in message.content.lower() or ele.strip() == message.content.lower():
-            mssg=random.choice(greet)
-    
-    for b in name:
-        if b in message.content.lower():
-            msg = message.content.lower().replace(b,(str(message.author).split("#", 1)[0]))
+    async with message.typing():
+        if message.author == client.user:
+            return
+        res = clento.query(message.content) 
+        answer = next(res.results).text  
+        mssg = (answer.replace("Wolfram|Alpha","Nathan"))
+
+        for ele in greet:
+            if ele in message.content.lower() or ele.strip() == message.content.lower():
+                mssg=random.choice(greet)
+
+        for b in name:
+            if b in message.content.lower():
+                msg = message.content.lower().replace(b,(str(message.author).split("#", 1)[0]))
+                mssg=msg
+
+        msg = message.content.lower().replace("'","")
+        if "im " in msg:
+            msg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
             mssg=msg
-    
-    msg = message.content.lower().replace("'","")
-    if "im " in msg:
-        msg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
-        mssg=msg
-    
-    if "ness" in message.content.lower():
-        mssg=random.choice(ness)    
-        
-    if "no u" in message.content:
-        mssg="no u"
-    await message.channel.send(mssg)
-              
-client.run(TOKEN)
+
+        if "ness" in message.content.lower():
+            mssg=random.choice(ness)    
+
+        if "no u" in message.content:
+            mssg="no u"
+        await message.channel.send(mssg)
+
+    client.run(TOKEN)

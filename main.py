@@ -17,10 +17,10 @@ ness = ["<:natelove:818547675489632267>","im highkey romantically attracted to n
 4: they main ness
 5: they main ness""","god I love ness","ness is the best","I wish ness live forever","ness is a epic pog gamer","ness looks so epic and cool with his red hat","ness is really great but i dont see whats so great about sayori. he should be with a nice guy like me."]
 @client.event
-async def on_message(message):
+async def on_message(message,ctx):
     if message.author == client.user:
             return
-    async with message.typing():
+    async with ctx.typing():
         res = clento.query(message.content) 
         answer = next(res.results).text  
         mssg = (answer.replace("Wolfram|Alpha","Nathan"))

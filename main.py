@@ -22,7 +22,7 @@ async def on_message(message):
         return
     res = clento.query(message.content) 
     answer = next(res.results).text  
-    mssg = (answer.replace("Wolfram|Alpha"/"Nathan"))
+    mssg = (answer.replace("Wolfram|Alpha","Nathan"))
     await message.channel.send(mssg)
     
     for ele in greet:

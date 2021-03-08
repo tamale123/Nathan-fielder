@@ -24,6 +24,7 @@ async def on_message(message):
     res = client.query(message.content) 
     answer = next(res.results).text  
     mssg=(answer) 
+    await message.channel.send(mssg)
     for ele in greet:
         if ele in message.content.lower() or ele.strip() == message.content.lower():
             mssg=random.choice(greet)

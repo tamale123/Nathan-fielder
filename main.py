@@ -9,7 +9,7 @@ from discord.ext import commands
 TOKEN = os.getenv("TOKEN")
 client = discord.Client()
 greet = ["hi ","hello ","helo ","hey ","sup ","yo ","you are obselete, fleshbag","stinky human"]
-name = ["nate","nathan"]
+name = ["nate","nathan","robot"]
 ness = ["<:natelove:818547675489632267>","im highkey romantically attracted to ness","i love ness <:natelove:818547675489632267>","ness is so hot and he is too good for sayori","ness is hot <:natelove:818547675489632267>","nesss <:natelove:818547675489632267>","ness is so poggers","ness <3","ness :)",'ness pog',"""top 5 reasons I love ness mains:
 1: they main ness
 2: they main ness
@@ -20,12 +20,9 @@ ness = ["<:natelove:818547675489632267>","im highkey romantically attracted to n
 async def on_message(message):
     if message.author == client.user:
         return
-    await message.channel.send("pog gamer")
     res = clento.query(message.content) 
     answer = next(res.results).text  
-    await message.channel.send("poge")
-    await message.channel.send(answer)
-    await message.channel.send("pog")
+    await message.channel.send(answer.replace("Wolfram|Alpha"/"Nathan"))
     for ele in greet:
         if ele in message.content.lower() or ele.strip() == message.content.lower():
             mssg=random.choice(greet)

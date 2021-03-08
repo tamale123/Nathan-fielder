@@ -1,4 +1,7 @@
 import os
+import wolframalpha
+app_id = "9HHRP3-7PAP33XWTU"
+client = wolframalpha.Client(app_id)
 from wikipya.core import Wikipya
 import wikipediaapi
 w = Wikipya("en")
@@ -9,16 +12,18 @@ import time
 from discord.ext import commands
 TOKEN = os.getenv("TOKEN")
 client = discord.Client()
-greet = ["hi ","hello ","helo ","hey ","sup ","hiiii ","yo "]
+hr = ["hours","hrs","hr"]
+mn = ["minutes","min", "mins"]
+greet = ["hi ","hello ","helo ","hey ","sup ","hiiii ","yo ","you are obselete, fleshbag"]
 name = ["nate","nathan"]
 q1 = ["what","who","wtf"]
 q2 = ["is","was","are","'s"]
-ness = ["*vomits on carpet* oh sorry. I was just so disgusted because you said ness","god I hate ness","ness >:(",'"ness"... every time someone says his name god weeps.',"""top 5 reasons I hate ness mains:
+ness = ["ness is so poggers","ness <3","ness :)",'ness pog',"""top 5 reasons I love ness mains:
 1: they main ness
 2: they main ness
 3: they main ness
 4: they main ness
-5: they main ness""","god I hate ness","ness is the worse","I wish ness die","ness is a stupid dumb diaper baby","hey guys can we please stop talking about ness? I really hate his guts and I cry every time I read his name."]
+5: they main ness""","god I love ness","ness is the best","I wish ness live forever","ness is a epic pog gamer","ness looks so epic and cool with his red hat","ness is really great but i dont see whats so great about sayori. he should be with a nice guy like me."]
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -39,6 +44,7 @@ async def on_message(message):
     if "no u" in message.content:
         await message.channel.send("no u")
     msg = message.content.lower()
+
     c = 0
     for x in q1:
         if x in msg:
@@ -64,5 +70,7 @@ async def on_message(message):
                     if c == 0:
                         c = 1
                         await message.channel.send(embed=embedVar)
-                    
+    res = client.query(message.content) 
+    answer = next(res.results).text  
+    message.channel.send(answer)           
 client.run(TOKEN)

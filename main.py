@@ -24,24 +24,24 @@ async def on_message(message):
         res = clento.query(message.content) 
         answer = next(res.results).text  
         mssg = (answer.replace("Wolfram|Alpha","Nathan"))
-
+        await message.channel.send(mssg)
         for ele in greet:
             if ele in message.content.lower() or ele.strip() == message.content.lower():
                 mssg=random.choice(greet)
-
+        await message.channel.send(mssg)
         for b in name:
             if b in message.content.lower():
                 msg = message.content.lower().replace(b,(str(message.author).split("#", 1)[0]))
-                mssg=msg
-
+                mssg = msg
+        await message.channel.send(mssg)
         msg = message.content.lower().replace("'","")
         if "im " in msg:
             msg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
             mssg=msg
-
+        await message.channel.send(mssg)
         if "ness" in message.content.lower():
             mssg=random.choice(ness)    
-
+        await message.channel.send(mssg)
         if "no u" in message.content:
             mssg="no u"
     await message.channel.send(mssg)

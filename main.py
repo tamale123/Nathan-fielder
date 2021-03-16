@@ -55,7 +55,9 @@ async def on_message(message):
             pass
         try:
             if "frog" in message.content.lower():
-                await message.channel.send("<:zgredo:786319106940076063><:imgay:719950832853844000>")
-                mssg = "this frog is gay."
+                await message.channel.send("<:zgredo:786319106940076063> <:imgay:719950832853844000>")
+                mssg="this frog is gay."
+        except:
+            pass
     await message.channel.send(mssg)
 client.run(TOKEN)

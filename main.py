@@ -48,14 +48,16 @@ async def on_message(message):
         try:
             if "ness" in message.content.lower():
                 mssg=random.choice(ness)    
-            await message.channel.send(mssg)
+        except:
+            pass
+        try:
             if "no u" in message.content:
                 mssg="no u"
         except:
             pass
         try:
             if "frog" in message.content.lower():
-                await message.channel.send("<:zgredo:786319106940076063> <:imgay:719950832853844000>")
+                await message.channel.send("<:zgredo:821222638609104916> <:imgay:821222638529150976>")
                 mssg="this frog is gay."
         except:
             pass

@@ -22,30 +22,42 @@ async def on_message(message):
             return
     async with message.channel.typing():
         mssg = "poop pog gamer"
-        res = clento.query(message.content) 
-        answer = next(res.results).text  
-        mssg = (answer.replace("Wolfram|Alpha","Nathan"))
-        await message.channel.send(mssg)
-        
-        for ele in greet:
-            if ele in message.content.lower() or ele.strip() == message.content.lower():
-                mssg=random.choice(greet)
-        await message.channel.send(mssg)
-        
-        for ele in name:
-            if ele in message.content.lower() or ele.strip() == message.content.lower():
-                mssg=message.content.lower().replace(ele,(str(message.author).split("#", 1)[0]))
-        await message.channel.send(mssg)
-        
-        msg = message.content.lower().replace("'","")
-        if "im " in msg:
-            mssg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
-        await message.channel.send(mssg)
-        
-        if "ness" in message.content.lower():
-            mssg=random.choice(ness)    
-        await message.channel.send(mssg)
-        if "no u" in message.content:
-            mssg="no u"
+        try:
+            res = clento.query(message.content) 
+            answer = next(res.results).text  
+            mssg = (answer.replace("Wolfram|Alpha","Nathan"))
+            await message.channel.send(mssg)
+        except:
+            pass
+        try:
+            for ele in greet:
+                if ele in message.content.lower() or ele.strip() == message.content.lower():
+                    mssg=random.choice(greet)
+            await message.channel.send(mssg)
+        except:
+            pass
+        try:
+            for ele in name:
+                if ele in message.content.lower() or ele.strip() == message.content.lower():
+                    mssg=message.content.lower().replace(ele,(str(message.author).split("#", 1)[0]))
+            await message.channel.send(mssg)
+        except:
+            pass
+        try:
+            msg = message.content.lower().replace("'","")
+            if "im " in msg:
+                mssg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
+            await message.channel.send(mssg)
+        except:
+            pass
+        try:
+            if "ness" in message.content.lower():
+                mssg=random.choice(ness)    
+            await message.channel.send(mssg)
+            if "no u" in message.content:
+                mssg="no u"
+        except:
+            pass
+
     await message.channel.send(mssg)
 client.run(TOKEN)

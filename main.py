@@ -69,7 +69,7 @@ async def on_message(message):
                     if c == 0:
                         c = 1
                         await message.channel.send(embed=embedVar)"""
-    res = client.query(message.content) 
+    """res = client.query(message.content) 
     answer = next(res.results).text  
-    await message.channel.send(answer)           
+    await message.channel.send(answer)"""           
 client.run(TOKEN)

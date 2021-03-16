@@ -10,7 +10,7 @@ TOKEN = os.getenv("TOKEN")
 client = discord.Client()
 greet = ["hi ","hello ","helo ","hey ","sup ","yo ","you are obselete, fleshbag","stinky human"]
 name = ["nate","nathan","robot"]
-ness = ["<:natelove:818547675489632267>","im highkey romantically attracted to ness","i love ness <:natelove:818547675489632267>","ness is so hot and he is too good for sayori","ness is hot <:natelove:818547675489632267>","nesss <:natelove:818547675489632267>","ness is so poggers","ness <3","ness :)",'ness pog',"""top 5 reasons I love ness mains:
+ness = ["💖💖💖","ness 💖","sayori is a fukndofndigbf wbdbfdsbsbNBDASJFBSJKBJFBJISDFB <:angrynatan:821229860030251089> <:angrynatan:821229860030251089> <:angrynatan:821229860030251089> <:angrynatan:821229860030251089> <:angrynatan:821229860030251089> WHAT DOES NESS SEE IN HER WHY HE WANT TO DATE STUPID SCHOLFIGRIG NEDFER GYGYKGHGHGHHJV","<:natelove:818547675489632267>","im highkey romantically attracted to ness","i love ness <:natelove:818547675489632267>","ness is so hot and he is too good for sayori","ness is hot <:natelove:818547675489632267>","nesss <:natelove:818547675489632267>","ness is so poggers","ness <3","ness :)",'ness pog',"""top 5 reasons I love ness mains:
 1: they main ness
 2: they main ness
 3: they main ness

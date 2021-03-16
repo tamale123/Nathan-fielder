@@ -31,9 +31,10 @@ async def on_message(message):
                 mssg=random.choice(greet)
         await message.channel.send(mssg)
         
-        for b in name:
-            if b in message.content.lower():
-                mssg = message.content.lower().replace(b,(str(message.author).split("#", 1)[0]))
+        for ele in name:
+            if ele in message.content.lower() or ele.strip() == message.content.lower():
+                mssg=random.choice(name)
+                mssg=message.content.lower().replace(ele,(str(message.author).split("#", 1)[0]))
         await message.channel.send(mssg)
         
         msg = message.content.lower().replace("'","")

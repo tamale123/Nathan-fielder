@@ -21,6 +21,7 @@ async def on_message(message):
     if message.author == client.user:
             return
     async with message.channel.typing():
+        mssg = "poop pog gamer"
         res = clento.query(message.content) 
         answer = next(res.results).text  
         mssg = (answer.replace("Wolfram|Alpha","Nathan"))

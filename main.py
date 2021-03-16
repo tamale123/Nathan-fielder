@@ -21,33 +21,28 @@ async def on_message(message):
     if message.author == client.user:
             return
     async with message.channel.typing():
-        mssg = "poop pog gamer"
         try:
             res = clento.query(message.content) 
             answer = next(res.results).text  
             mssg = (answer.replace("Wolfram|Alpha","Nathan"))
-            await message.channel.send(mssg)
         except:
             pass
         try:
             for ele in greet:
                 if ele in message.content.lower() or ele.strip() == message.content.lower():
                     mssg=random.choice(greet)
-            await message.channel.send(mssg)
         except:
             pass
         try:
             for ele in name:
                 if ele in message.content.lower() or ele.strip() == message.content.lower():
                     mssg=message.content.lower().replace(ele,(str(message.author).split("#", 1)[0]))
-            await message.channel.send(mssg)
         except:
             pass
         try:
             msg = message.content.lower().replace("'","")
             if "im " in msg:
                 mssg = 'Hi '+(msg[(msg.find("im ")+3):])+", I'm dad."
-            await message.channel.send(mssg)
         except:
             pass
         try:
@@ -58,6 +53,9 @@ async def on_message(message):
                 mssg="no u"
         except:
             pass
-
+        try:
+            if "frog" in message.content.lower():
+                await message.channel.send("<:zgredo:786319106940076063><:imgay:719950832853844000>")
+                mssg = "this frog is gay."
     await message.channel.send(mssg)
 client.run(TOKEN)

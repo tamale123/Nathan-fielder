@@ -20,13 +20,15 @@ ness = ["💖💖💖","ness 💖","sayori is a fukndofndigbf wbdbfdsbsbNBDASJFB
 async def on_message(message):
     if message.author == client.user:
             return
+    
     async with message.channel.typing():
-        try:
-            res = clento.query(message.content) 
-            answer = next(res.results).text  
-            mssg = (answer.replace("Wolfram|Alpha","Nathan"))
-        except:
-            pass
+        if client.user.mention in message.content.split():
+            try:
+                res = clento.query(message.content) 
+                answer = next(res.results).text  
+                mssg = (answer.replace("Wolfram|Alpha","Nathan"))
+            except:
+                pass
         try:
             for ele in greet:
                 if ele in message.content.lower() or ele.strip() == message.content.lower():

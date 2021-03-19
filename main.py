@@ -22,9 +22,10 @@ async def on_message(message):
             return
     
     async with message.channel.typing():
-        if client.user.mention in message.content.split():
+        mention = f'<@!{bot.user.id}>'
+        if mention in message.content:
             try:
-                res = clento.query(message.content) 
+                res = clento.query(message.content.replace(mention,"")) 
                 answer = next(res.results).text  
                 mssg = (answer.replace("Wolfram|Alpha","Nathan"))
             except:

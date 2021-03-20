@@ -30,7 +30,6 @@ async def on_message(message):
         messagecontent = message.content.replace(str(client.user.id),"")
         messagecontent = messagecontent.replace("<@!>","")
         messagecontent = messagecontent.strip()
-        await message.channel.send(messagecontent)
         try:
             res = clento.query(messagecontent) 
             answer = next(res.results).text  

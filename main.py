@@ -19,14 +19,15 @@ ness = ["💖💖💖","ness 💖","sayori is a fukndofndigbf wbdbfdsbsbNBDASJFB
 5: they main ness""","god I love ness","ness is the best","I wish ness live forever","ness is a epic pog gamer","ness looks so epic and cool with his red hat","ness is really great but i dont see whats so great about sayori. he should be with a nice guy like me."]
 @client.event
 
-async def on_message(message):
-    mention = f'<@!{bot.user.id}>'    
-    unless message.channel.id == "822621156951457854" or mention in message.content:
+async def on_message(message):  
+    if message.channel.id == "822621156951457854" or client.user.mention in message.content.split():
+        pass
+    else:
         return
     if message.author == client.user:
         return
     async with message.channel.typing():
-        messagecontent = message.content.replace(mention,"")
+        messagecontent = message.content.replace(client.user.mention,"")
         try:
             res = clento.query(messagecontent) 
             answer = next(res.results).text  

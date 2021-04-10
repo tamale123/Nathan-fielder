@@ -20,7 +20,7 @@ ness = ["💖💖💖","ness 💖","sayori is a fukndofndigbf wbdbfdsbsbNBDASJFB
 @client.event
 
 async def on_message(message):
-    if str(client.user.id) in message.content or str(message.channel.id) == "822621156951457854":
+    if str(client.user.id) in message.content or str(message.channel.id) == "822621156951457854" or str(message.channel.id) == "830271205890195489":
         pass
     else:
         return
